@@ -2,7 +2,7 @@
   "name": "code",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://cjohnson.io/decentralize",
+  "homepage": "https://cjohnson.io/",
   "dependencies": {
     "classnames": "^2.2.5",
     "react": "^15.4.2",
