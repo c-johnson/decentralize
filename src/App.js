@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       hello: "thing",
       tabs: ['Manifesto', 'Contenders', 'About'],
-      currentTab: 'Manifesto',
+      currentTab: 'Contenders',
     };
 
     // This binding is necessary to make `this` work in the callback

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export class IntroText extends Component {
   render() {
     return (
-      <div className="main-body">
+      <div>
         <p className="App-intro">
           A "decentralized web initiative" is a specific kind of software project, usually a protocol or suite of software tools, intending to greatly increase the ability of application developers (and ultimately end users) to control their computing experience and personal data. These initiatives aim to coordinate developer mindshare to overcome some limitation of the current software ecosystem unable to be solved by traditional capitalist incentives.
         </p>
@@ -20,7 +20,7 @@ export class IntroText extends Component {
           The following initiatives are trying in part to democratize some aspect of the development of our digital life through technological standardization. The problems of standardization are well known...
         </p>
         <div className="justify-center">
-          <img src="https://imgs.xkcd.com/comics/chat_systems.png" />
+          <a href="https://xkcd.com/927/" target="_blank"><img src="https://imgs.xkcd.com/comics/chat_systems.png" /></a>
         </div>
         <p>
           We just need to get started.

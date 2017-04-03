@@ -16,12 +16,16 @@
 }
 
 .App-intro {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .main-body {
   max-width: 560px;
-  margin: 0 auto;
+  margin: 0 auto 100px;
+}
+
+.main-body img {
+  margin: 20px 0;
 }
 
 .main-menu {
@@ -33,6 +37,7 @@
 
 .main-menu li {
   margin-right: 20px;
+  cursor: pointer;
 }
 
 .main-menu .active {
