@@ -36,8 +36,10 @@ export class Directory extends Component {
 
 class DirectoryItem extends Component {
   render() {
-    <li className="directory-list-item">
-      <h3>{this.props.name}</h3>
-    </li>
+    return (
+      <li className="directory-list-item">
+        <h3>{this.props.name}</h3>
+      </li>
+    );
   }
 }
