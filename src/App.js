@@ -19,10 +19,10 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setTabElements();
+    this.renderTabs();
   }
 
-  setTabElements() {
+  renderTabs() {
     const tabElements = this.state.tabs.map((tabName) => {
       const classes = classNames({
         active: tabName === this.state.currentTab
@@ -33,8 +33,21 @@ class App extends Component {
       )
     })
 
+    const bodyElementsMap = {
+      Manifesto: () => { return (
+        <IntroText />
+      )},
+      Contenders: () => { return (
+        <Directory />
+      )},
+      About: () => { return (
+        <h2>About!</h2>
+      )},
+    }
+
     this.setState({
-      tabElements: tabElements
+      tabElements: tabElements,
+      bodyElements: bodyElementsMap[this.state.currentTab](),
     });
   }
 
@@ -42,24 +55,24 @@ class App extends Component {
     this.setState({
       currentTab: event.target.dataset.href
     }, () => {
-      this.setTabElements();
+      this.renderTabs();
     });
   }
 
   render() {
     const tabElements = this.state ? this.state.tabElements : "";
+    const bodyElements = this.state ? this.state.bodyElements : "";
 
     return (
       <div className="App">
         <div className="App-header">
-          <h3>Decentralized Web Initiatives</h3>
+          <h3>Big List of Decentralized Web Initiatives</h3>
         </div>
         <div className="main-body">
           <ul className="main-menu">
             {tabElements}
           </ul>
-          <IntroText />
-          <Directory />
+          {bodyElements}
         </div>
       </div>
     );
