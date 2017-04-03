@@ -1,0 +1,13 @@
+.directory-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.directory-list-item {
+  padding: 10px 0;
+  border-top: 1px solid gray;
+}
+
+.directory-list-item:last-child {
+  border-bottom: 1px solid gray;
+}
