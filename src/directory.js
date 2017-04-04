@@ -50,7 +50,7 @@ class DirectoryItem extends Component {
 
   render() {
     const triangle = this.state.active ? "▾" : "▸";
-    const hideClass = this.state.active ? "" : " hide";
+    const hideClass = this.state.active ? " active" : "";
 
     return (
       <li className="directory-list-item">

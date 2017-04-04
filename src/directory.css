@@ -19,7 +19,9 @@
 }
 
 .directory-list-dropdown-arrow {
-  flex-basis: 12px;
+  flex-basis: 15px;
+  position: relative;
+  bottom: 2px;
 }
 
 .directory-list-name {
@@ -38,6 +40,10 @@
   border-bottom: 1px solid #ddd;
 }
 
-.hide {
+.directory-list-body {
   display: none;
+}
+
+.directory-list-body.active {
+  display: block;
 }
