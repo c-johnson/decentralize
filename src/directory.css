@@ -18,22 +18,27 @@
   font-weight: bold;
 }
 
-.directory-list-dropdown-arrow {
+.directory-list-dropdown-arrow, .directory-spacer {
   flex-basis: 15px;
   position: relative;
   bottom: 2px;
 }
 
-.directory-list-name {
-  flex-basis: 40%;
+/* TODO: This sucks, obviously, fix it */
+.directory-spacer-3 {
+  flex-basis: 3%;
 }
 
-.directory-list-type {
-  flex-basis: 25%;
+.directory-list-name, .directory-body-descriptions {
+  flex-basis: 240px;
 }
 
-.directory-list-last-updated {
-  flex-basis: 25%;
+.directory-list-type, .directory-list-last-updated {
+  flex-basis: 120px;
+}
+
+.directory-body-resources, .directory-body-updates {
+  flex-basis: 120px;
 }
 
 .directory-list-item:last-child {
@@ -45,5 +50,14 @@
 }
 
 .directory-list-body.active {
-  display: block;
+  display: flex;
+}
+
+.directory-list-body h4 {
+  margin: 0 0 3px;
+  font-size: 12px;
+}
+
+.directory-description-snippet {
+  margin-bottom: 15px;
 }

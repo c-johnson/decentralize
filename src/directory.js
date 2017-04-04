@@ -8,6 +8,8 @@ export class Directory extends Component {
       homepage: "https://camlistore.org",
       type: "Protocol",
       lastUpdated: "January 2017",
+      manifestoLink: "https://camlistore.org/doc/overview",
+      description: "Camlistore is a set of open source formats, protocols, and software for modeling, storing, searching, sharing and synchronizing data in the post-PC era. Data may be files or objects, tweets or 5TB videos, and you can access it via a phone, browser or FUSE filesystem.",
     }, {
       name: 'Camlistore',
     }, {
@@ -72,7 +74,29 @@ class DirectoryItem extends Component {
           </div>
         </div>
         <div className={`directory-list-body${hideClass}`}>
-          <h1>Sup, {this.props.proj.name} fam</h1>
+          <div className="directory-spacer"></div>
+          <div className="directory-body-descriptions">
+            <div className="directory-description-snippet">
+              <h4>Manifesto</h4>
+              <a href={this.props.proj.manifestoLink} target="_blank">{this.props.proj.manifestoLink}</a>
+            </div>
+            <div className="directory-description-snippet">
+              <h4>Description</h4>
+              <div>{this.props.proj.description}</div>
+            </div>
+          </div>
+          <div className="directory-body-resources">
+            <div className="directory-description-snippet">
+              <h4>Resources</h4>
+              <div>Some other cool stuff, I bet</div>
+            </div>
+          </div>
+          <div className="directory-body-updates">
+            <div className="directory-description-snippet">
+              <h4>Updates</h4>
+              <div>Updates?</div>
+            </div>
+          </div>
         </div>
       </li>
     );
