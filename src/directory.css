@@ -1,13 +1,43 @@
 .directory-list {
   list-style-type: none;
   padding: 0;
+
+  font-size: 14px;
 }
 
-.directory-list-item {
+.directory-list-item-header {
   padding: 15px 0;
   border-top: 1px solid #ddd;
+
+  display: flex;
+}
+
+.directory-list-item-header h3 {
+  margin: 0 0 3px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.directory-list-dropdown-arrow {
+  flex-basis: 12px;
+}
+
+.directory-list-name {
+  flex-basis: 40%;
+}
+
+.directory-list-type {
+  flex-basis: 25%;
+}
+
+.directory-list-last-updated {
+  flex-basis: 25%;
 }
 
 .directory-list-item:last-child {
   border-bottom: 1px solid #ddd;
+}
+
+.hide {
+  display: none;
 }
