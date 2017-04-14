@@ -23,10 +23,8 @@ export class Directory extends Component {
     });
 
     return (
-      <div>
-        <ul className="directory-list">
-          {childrenItems}
-        </ul>
+      <div className="directory-list">
+        {childrenItems}
       </div>
     );
   }
@@ -55,7 +53,7 @@ class DirectoryItem extends Component {
     const hideClass = this.state.active ? " active" : "";
 
     return (
-      <li className="directory-list-item">
+      <div className="directory-list-item">
         <div className="directory-list-item-header" onClick={this.handleHeaderClick}>
           <div className="directory-list-dropdown-arrow">
             <span>{triangle}</span>
@@ -98,7 +96,7 @@ class DirectoryItem extends Component {
             </div>
           </div>
         </div>
-      </li>
+      </div>
     );
   }
 }

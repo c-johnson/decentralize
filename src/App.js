@@ -3,6 +3,7 @@ import './App.css';
 import { Directory } from './directory.js';
 import { IntroText } from './intro-text.js';
 import classNames from 'classnames';
+import KnightGrant from './pdfs/KnightGrant.pdf'
 
 class App extends Component {
   constructor(args) {
@@ -11,7 +12,7 @@ class App extends Component {
     this.state = {
       hello: "thing",
       tabs: ['Manifesto', 'Contenders', 'About'],
-      currentTab: 'Contenders',
+      currentTab: 'Manifesto',
     };
 
     // This binding is necessary to make `this` work in the callback
@@ -31,7 +32,9 @@ class App extends Component {
       return (
         <li className={classes} data-href={tabName} onClick={this.handleMenuClick} key={tabName}>{tabName}</li>
       )
-    })
+    });
+
+    // debugger
 
     const bodyElementsMap = {
       Manifesto: () => { return (
@@ -40,8 +43,24 @@ class App extends Component {
       Contenders: () => { return (
         <Directory />
       )},
-      About: () => { return (
-        <h2>About!</h2>
+      About: () => {
+        return (
+        <div>
+          <p>Hi, my name is Chris, although I sometimes go by John Henry online. I'm researching decentralized alternatives to the current web software ecosystem. There's a lot of work to do; if you hear of any good work being done in this space, please drop me a line.</p>
+
+          <p>I wrote a thing about Mastodon <a href="https://medium.com/@thejohnhenry/mastodon-is-dead-in-the-water-888c10e8abb1">here</a></p>
+
+          <p>I have an in-progress grant for the Knight Foundation <a href={KnightGrant}>here</a></p>
+
+          <p>You can contact me via:</p>
+
+          <ul>
+          <li>Email: chris at cjohnson dot eye ohhh</li>
+          <li>The damned birdsite: <a href="https://twitter.com/ckhonson" target="_blank">@ckhonson</a></li>
+          <li>Mastodon.social: <a href="https://mastodon.social/@johnhenry" target="_blank">johnhenry@mastodon.social</a></li>
+          <li>Wandering aimlessly around San Francisco, California</li>
+          </ul>
+        </div>
       )},
     }
 

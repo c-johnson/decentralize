@@ -1,6 +1,6 @@
 .directory-list {
-  list-style-type: none;
-  padding: 0;
+  margin-left: -70px;
+  margin-right: -70px;
 
   font-size: 14px;
 }
@@ -30,15 +30,15 @@
 }
 
 .directory-list-name, .directory-body-descriptions {
-  flex-basis: 240px;
+  flex-basis: 290px;
 }
 
 .directory-list-type, .directory-list-last-updated {
-  flex-basis: 120px;
+  flex-basis: 170px;
 }
 
 .directory-body-resources, .directory-body-updates {
-  flex-basis: 120px;
+  flex-basis: 170px;
 }
 
 .directory-list-item:last-child {

@@ -1,5 +1,10 @@
+@font-face {
+  font-family: 'Flaco';
+  src: url('./fonts/flaco/Flaco-Reg.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Flaco", sans-serif;
 }

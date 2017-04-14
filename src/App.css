@@ -16,7 +16,7 @@
 }
 
 .App-intro {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .main-body {
@@ -33,6 +33,7 @@
   padding: 0;
   margin: 30px 0;
   display: flex;
+  justify-content: center;
 }
 
 .main-menu li {
