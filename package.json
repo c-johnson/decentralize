@@ -2,7 +2,7 @@
   "name": "code",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://decentralize.tech",
+  "homepage": "http://decentralize.tech",
   "dependencies": {
     "classnames": "^2.2.5",
     "react": "^15.4.2",
