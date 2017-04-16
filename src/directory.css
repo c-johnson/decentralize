@@ -1,6 +1,6 @@
 .directory-list {
-  margin-left: -70px;
-  margin-right: -70px;
+  margin-left: -150px;
+  margin-right: -120px;
 
   font-size: 14px;
 }
@@ -30,14 +30,17 @@
 }
 
 .directory-list-name, .directory-body-descriptions {
+  padding: 0 15px;
   flex-basis: 290px;
 }
 
-.directory-list-type, .directory-list-last-updated {
-  flex-basis: 170px;
+.directory-list-type, .directory-body-resources {
+  padding: 0 15px;
+  flex-basis: 250px;
 }
 
-.directory-body-resources, .directory-body-updates {
+.directory-list-last-updated, .directory-body-updates {
+  padding: 0 15px;
   flex-basis: 170px;
 }
 

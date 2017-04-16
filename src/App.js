@@ -11,8 +11,8 @@ class App extends Component {
 
     this.state = {
       hello: "thing",
-      tabs: ['Manifesto', 'Contenders', 'About'],
-      currentTab: 'Manifesto',
+      tabs: ['Manifesto', 'Projects', 'About'],
+      currentTab: 'Projects',
     };
 
     // This binding is necessary to make `this` work in the callback
@@ -40,7 +40,7 @@ class App extends Component {
       Manifesto: () => { return (
         <IntroText />
       )},
-      Contenders: () => { return (
+      Projects: () => { return (
         <Directory />
       )},
       About: () => {
