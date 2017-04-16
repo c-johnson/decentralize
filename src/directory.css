@@ -39,6 +39,14 @@
   flex-basis: 250px;
 }
 
+.directory-body-resources ul li {
+  margin-bottom: 8px;
+}
+
+.directory-body-resources iframe {
+  vertical-align: text-top
+}
+
 .directory-list-last-updated, .directory-body-updates {
   padding: 0 15px;
   flex-basis: 170px;

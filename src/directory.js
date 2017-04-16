@@ -10,7 +10,7 @@ export class Directory extends Component {
       lastUpdated: "April 2017",
       age: 6,
       manifestoLink: "https://camlistore.org/doc/overview",
-      description: "Camlistore is a set of open source formats, protocols, and software for modeling, storing, searching, sharing and synchronizing data in the post-PC era. Data may be files or objects, tweets or 5TB videos, and you can access it via a phone, browser or FUSE filesystem.", // their description
+      descriptionTheirs: "Camlistore is a set of open source formats, protocols, and software for modeling, storing, searching, sharing and synchronizing data in the post-PC era. Data may be files or objects, tweets or 5TB videos, and you can access it via a phone, browser or FUSE filesystem.", // their description
       updates: [{
         date: "April 5, 2017",
         description: "Released version '4/17': Adds support for GopherJS (a Go -> Javascript compiler), scanningcabnet (store scanned documents), and Plaid.com (storing financial data)",
@@ -21,6 +21,14 @@ export class Directory extends Component {
       resources: [{
         type: "youtube-video",
         src: "https://www.youtube.com/embed/8Dk2iVlc67M",
+      }, {
+        type: "youtube-video",
+        src: "https://www.youtube.com/embed/yvjeIZgykiA",
+      }],
+      notablePeople: [{
+        name: "Brad Fitzpatrick",
+        homepage: "https://bradfitz.com/",
+        description: "creator of Livejournal, Golang core team member",
       }],
     }, {
       name: 'Camlistore',
@@ -67,6 +75,7 @@ class DirectoryItem extends Component {
 
     let resourceElements;
     let updateElements;
+    let notableElements;
 
     if (proj.resources) {
       resourceElements = proj.resources.map((resource, index) => {
@@ -92,6 +101,18 @@ class DirectoryItem extends Component {
       });
     } else {
       updateElements = null;
+    }
+
+    if (proj.notablePeople) {
+      notableElements = proj.notablePeople.map((person, index) => {
+        return (
+          <li key={index}>
+            <a href={person.homepage} target="_blank"><b>{person.name}</b></a>
+            <span>: </span>
+            <span>{person.description}</span>
+          </li>
+        )
+      });
     }
 
     return (
@@ -121,8 +142,14 @@ class DirectoryItem extends Component {
               <a href={proj.manifestoLink} target="_blank">{proj.manifestoLink}</a>
             </div>
             <div className="directory-description-snippet">
-              <h4>Description</h4>
-              <div>{proj.description}</div>
+              <h4>Description (theirs)</h4>
+              <div>{proj.descriptionTheirs}</div>
+            </div>
+            <div className="directory-description-snippet">
+              <h4>Notable people</h4>
+              <ul>
+                {notableElements}
+              </ul>
             </div>
           </div>
           <div className="directory-body-resources">
@@ -131,6 +158,7 @@ class DirectoryItem extends Component {
               <ul>
                 {resourceElements}
               </ul>
+              <div><a href="#">See more...</a></div>
             </div>
           </div>
           <div className="directory-body-updates">
@@ -139,6 +167,7 @@ class DirectoryItem extends Component {
               <ul>
                 {updateElements}
               </ul>
+              <div><a href="#">See more...</a></div>
             </div>
           </div>
         </div>
