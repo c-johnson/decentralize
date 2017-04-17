@@ -43,7 +43,7 @@
   margin-bottom: 8px;
 }
 
-.directory-body-resources iframe {
+.directory-body-resources iframe, .directory-body-resources video {
   vertical-align: text-top
 }
 

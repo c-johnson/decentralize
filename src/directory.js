@@ -56,6 +56,12 @@ class DirectoryItem extends Component {
               <iframe width="230" height="128" src={`${resource.src}?rel=0`} frameBorder="0" allowFullScreen></iframe>
             </li>
           );
+        } else if (resource.type === "video-embed") {
+          return (
+            <li key={index}>
+              <video src={resource.src} width="230" controls/>
+            </li>
+          );
         } else if (resource.type === "link") {
           return (
             <li key={index}>
@@ -97,6 +103,8 @@ class DirectoryItem extends Component {
           </li>
         )
       });
+    } else {
+      notableElements = null;
     }
 
     const notableText = (proj.name === 'Urbit') ? "Infamous people" : "Notable people";

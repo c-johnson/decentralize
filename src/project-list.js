@@ -123,7 +123,7 @@ export const ProjectList = [{
   type: "Protocol",
   lastUpdated: "March 2017",
   manifestoLink: "https://www.gnu.org/consensus/manifesto",
-  descriptionTheirs: "[My description] Ostatus is a collection of protocols, without a strong central advocacy hub, that implements microblogging (like Twitter) using existing web protocols like ActivityStreams, WebFinger, Salmon, and Atom. Current big implementations are GNU social and Mastodon",
+  descriptionTheirs: "[My description] Ostatus is a collection of protocols, without a strong central advocacy hub, that implements microblogging (like Twitter) using existing web protocols like ActivityStreams, WebFinger, Salmon, and Atom. Popular implementations include GNU social and Mastodon.",
   updates: [{
     date: "Mar 31, 2017",
     linkSrc: "https://medium.com/hacker-daily/welcome-to-mastodon-111d9227e56a",
@@ -142,4 +142,29 @@ export const ProjectList = [{
     src: "https://www.fknsrs.biz/blog/don-statusnet-node-part-one-read-protocols.html",
     description: "Good overview of implementation details for underlying Ostatus protocols",
   }]
+}, {
+  name: "Matrix",
+  homepage: "http://matrix.org/",
+  type: "Protocol",
+  lastUpdated: "April 2017",
+  manifestoLink: "http://matrix.org/docs/guides/faq.html",
+  descriptionTheirs: "Matrix is an open standard for interoperable, decentralised, real-time communication over IP. It can be used to power Instant Messaging, VoIP/WebRTC signalling, Internet of Things communication - or anywhere you need a standard HTTP API for publishing and subscribing to data whilst tracking the conversation history.",
+  updates: [{
+    date: "Apr 11, 2017",
+    linkSrc: "https://matrix.org/blog/2017/04/11/synapse-0-20-0-is-released/",
+    description: "Synapse (reference Matrix implementation) 0.20 released; supports phone numbers as 3PID, several performance and bug fixes,"
+  }, {
+    date: "Apr 4, 2017",
+    linkSrc: "https://matrix.org/blog/2017/04/04/opening-up-cyberspace-with-matrix-and-webvr/",
+    description: "Very cool WebVR intergation & demo; allows connecting to Matrix clients through virutal reality, taking first step toward open teleconferencing and VR social discoverability",
+  }],
+  resources: [{
+    type: "video-embed",
+    src: "http://bofh.nikhef.nl/events/FOSDEM/2017/AW1.125/matrix_future.mp4",
+    description: "Great overview of Matrix ecosystem & future at FOSDEM 2017",
+  }, {
+    type: "link",
+    src: "https://matrix.org",
+    description: "Matrix homepage itself documents a wealth of great resources",
+  }],
 }];
