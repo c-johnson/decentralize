@@ -47,7 +47,7 @@ export const ProjectList = [{
   }, {
     type: "link",
     src: "http://ds.qcri.org/publications/2016-mansour-www.pdf",
-    description: "A Demonstration of the Solid Platform for Social Web Applications",
+    description: "[pdf] A Demonstration of the Solid Platform for Social Web Applications",
   }],
   notablePeople: [{
     name: "Tim Berners-Lee",

@@ -55,6 +55,12 @@ class DirectoryItem extends Component {
               <iframe width="230" height="128" src={`${resource.src}?rel=0`} frameBorder="0" allowFullScreen></iframe>
             </li>
           );
+        } else if (resource.type === "link") {
+          return (
+            <li key={index}>
+              <a href={resource.src} target="_blank">{resource.description}</a>
+            </li>
+          )
         }
       });
     } else {
