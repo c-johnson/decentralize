@@ -87,6 +87,6 @@ export const ProjectList = [{
   notablePeople: [{
     name: "Curtis Yarvin",
     homepage: "https://en.wikipedia.org/wiki/Curtis_Yarvin",
-    description: "AKA \"Mencius Moldbug\", founder of neoreactionary ideology",
+    description: "AKA \"Mencius Moldbug\", infamous blogger",
   }]
 }];
