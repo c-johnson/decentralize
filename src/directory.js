@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './directory.css';
 import { ProjectList } from './project-list';
+import { Velocity } from 'velocity-animate';
 
 export class Directory extends Component {
   render() {
@@ -69,9 +70,16 @@ class DirectoryItem extends Component {
 
     if (proj.updates) {
       updateElements = proj.updates.map((update, index) => {
+        let dateElem;
+        if (update.linkSrc) {
+          dateElem = (<a href={update.linkSrc} target="_blank" className="unstyled-link"><b>{update.date}</b></a>);
+        } else {
+          dateElem = (<b>{update.date}</b>);
+        }
+
         return (
           <li key={index}>
-            <b>{update.date}</b>: <span>{update.description}</span>
+            {dateElem}: <span>{update.description}</span>
           </li>
         );
       });
@@ -90,6 +98,8 @@ class DirectoryItem extends Component {
         )
       });
     }
+
+    const notableText = (proj.name === 'Urbit') ? "Infamous people" : "Notable people";
 
     return (
       <div className="directory-list-item">
@@ -122,7 +132,7 @@ class DirectoryItem extends Component {
               <div>{proj.descriptionTheirs}</div>
             </div>
             <div className="directory-description-snippet">
-              <h4>Notable people</h4>
+              <h4>{notableText}</h4>
               <ul>
                 {notableElements}
               </ul>
