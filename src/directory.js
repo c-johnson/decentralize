@@ -1,40 +1,10 @@
 import React, { Component } from 'react';
 import './directory.css';
+import { ProjectList } from './project-list';
 
 export class Directory extends Component {
   render() {
-    const projects = [{
-      name: 'Camlistore',
-      homepage: "https://camlistore.org",
-      type: "Protocol",
-      lastUpdated: "April 2017",
-      age: 6,
-      manifestoLink: "https://camlistore.org/doc/overview",
-      descriptionTheirs: "Camlistore is a set of open source formats, protocols, and software for modeling, storing, searching, sharing and synchronizing data in the post-PC era. Data may be files or objects, tweets or 5TB videos, and you can access it via a phone, browser or FUSE filesystem.", // their description
-      updates: [{
-        date: "April 5, 2017",
-        description: "Released version '4/17': Adds support for GopherJS (a Go -> Javascript compiler), scanningcabnet (store scanned documents), and Plaid.com (storing financial data)",
-      }, {
-        date: "April 24, 2016",
-        description: "Presented a great overview of Camlistore at LinuxFest Northwest",
-      }],
-      resources: [{
-        type: "youtube-video",
-        src: "https://www.youtube.com/embed/8Dk2iVlc67M",
-      }, {
-        type: "youtube-video",
-        src: "https://www.youtube.com/embed/yvjeIZgykiA",
-      }],
-      notablePeople: [{
-        name: "Brad Fitzpatrick",
-        homepage: "https://bradfitz.com/",
-        description: "creator of Livejournal, Golang core team member",
-      }],
-    }, {
-      name: 'Camlistore',
-    }, {
-      name: 'Camlistore',
-    }];
+    const projects = ProjectList;
 
     const childrenItems = projects.map((proj, index) => {
       return (
@@ -79,7 +49,7 @@ class DirectoryItem extends Component {
 
     if (proj.resources) {
       resourceElements = proj.resources.map((resource, index) => {
-        if (resource.type === "youtube-video") {
+        if (resource.type === "video-youtube") {
           return (
             <li key={index}>
               <iframe width="230" height="128" src={`${resource.src}?rel=0`} frameBorder="0" allowFullScreen></iframe>
