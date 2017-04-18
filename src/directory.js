@@ -7,7 +7,7 @@ export class Directory extends Component {
     super(...args);
 
     this.state = {
-      active: false
+      active: false,
     };
 
     // This binding is necessary to make `this` work in the callback

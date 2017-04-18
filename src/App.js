@@ -45,7 +45,7 @@ class App extends Component {
       )},
       About: () => {
         return (
-        <div>
+        <div className="small-container">
           <p>Hi, my name is Chris, although I sometimes go by John Henry online. I'm researching decentralized alternatives to the current web software ecosystem. There's a lot of work to do; if you hear of any good work being done in this space, please drop me a line.</p>
 
           <p>I wrote a thing about Mastodon <a href="https://medium.com/@thejohnhenry/mastodon-is-dead-in-the-water-888c10e8abb1">here</a></p>
@@ -61,7 +61,7 @@ class App extends Component {
           <li>Wandering aimlessly around San Francisco, California</li>
           </ul>
 
-          <p>I'm organizing a Slack group soon (may move to Riot.im) to discuss the Index and advance specific projects in the decentralization space. If you're interested, send me an email at the above address with a short description of your intent and any current work you're doing with decentralized web technology. <b>Only people seriously engaged in furthering decentralized technology</b> will be invited, and membership will be kept small during the initial period.</p>
+          <p>I'm organizing a Slack group (may move to Riot.im) to discuss the Index and advance specific projects in the decentralization space. If you're interested, send me an email at the above address with a short description of your intent and any current work you're doing with decentralized web technology. Only people seriously engaged in furthering decentralized technology will be invited, and membership will be kept small during the initial period, so please include some indication that you're actively working on the problem and not just passingly interested.</p>
         </div>
       )},
     }
