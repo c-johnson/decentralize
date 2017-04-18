@@ -18,6 +18,10 @@
   font-weight: bold;
 }
 
+.directory-list-dropdown-arrow {
+  cursor: pointer;
+}
+
 .directory-list-dropdown-arrow, .directory-spacer {
   flex-basis: 15px;
   position: relative;

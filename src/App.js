@@ -50,7 +50,7 @@ class App extends Component {
 
           <p>I wrote a thing about Mastodon <a href="https://medium.com/@thejohnhenry/mastodon-is-dead-in-the-water-888c10e8abb1">here</a></p>
 
-          <p>I have an in-progress grant for the Knight Foundation <a href={KnightGrant}>here</a></p>
+          <p>I have an in-progress grant application for the Knight Foundation's Protoype Fund <a href={KnightGrant}>here</a></p>
 
           <p>You can contact me via:</p>
 
@@ -60,6 +60,8 @@ class App extends Component {
           <li>Mastodon.social: <a href="https://mastodon.social/@johnhenry" target="_blank">johnhenry@mastodon.social</a></li>
           <li>Wandering aimlessly around San Francisco, California</li>
           </ul>
+
+          <p>I'm organizing a Slack group soon (may move to Riot.im) to discuss the Index and advance specific projects in the decentralization space. If you're interested, send me an email at the above address with a short description of your intent and any current work you're doing with decentralized web technology. <b>Only people seriously engaged in furthering decentralized technology</b> will be invited, and membership will be kept small during the initial period.</p>
         </div>
       )},
     }

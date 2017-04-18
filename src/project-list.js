@@ -131,12 +131,12 @@ export const ProjectList = [{
   }, {
     date: "Jan 11, 2017",
     linkSrc: "https://robek.world/internet/mastodon-social-is-the-twitter-alternative-for/",
-    description: "Great overview of \"fediverse\" and OStatus implementations published at robek.world",
+    description: "Great overview of \"fediverse\" and OStatus implementations published at robe k.world",
   }],
   resources: [{
     type: "link",
     src: "https://medium.com/hacker-daily/mastodon-is-dead-in-the-water-888c10e8abb1",
-    description: "Lengthy and critical review of Mastodon / OStatus ecosystem published by one John Henry",
+    description: "Lengthy and critical review of Mastodon / OStatus ecosystem (published by me)",
   }, {
     type: "link",
     src: "https://www.fknsrs.biz/blog/don-statusnet-node-part-one-read-protocols.html",
@@ -284,5 +284,5 @@ export const ProjectList = [{
     name: "Tim Berners-Lee",
     homepage: "https://www.w3.org/People/Berners-Lee/",
     description: "Founder of the World Wide Web, Director of W3C"
-  }]
+  }],
 }];

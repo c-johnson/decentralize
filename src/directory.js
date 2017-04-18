@@ -125,7 +125,7 @@ class DirectoryItem extends Component {
           </div>
           <div className="directory-list-name">
             <h3>{proj.name}</h3>
-            <div>{proj.homepage}</div>
+            <div><a href={proj.homepage} target="_blank" className="unstyled-link" onClick={(e) => {e.stopPropagation()}}>{proj.homepage}</a></div>
           </div>
           <div className="directory-list-type">
             <h3>Type</h3>
