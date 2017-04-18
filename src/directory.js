@@ -65,7 +65,7 @@ class DirectoryItem extends Component {
         } else if (resource.type === "link") {
           return (
             <li key={index}>
-              <a href={resource.src} target="_blank">{resource.description}</a>
+              <a href={resource.src} target="_blank">link</a>. <span>{resource.description}</span>
             </li>
           )
         }
@@ -108,6 +108,14 @@ class DirectoryItem extends Component {
     }
 
     const notableText = (proj.name === 'Urbit') ? "Infamous people" : "Notable people";
+    const notableBlock = (proj.notablePeople) ? (
+      <div className="directory-description-snippet">
+        <h4>{notableText}</h4>
+        <ul>
+          {notableElements}
+        </ul>
+      </div>
+    ) : null;
 
     return (
       <div className="directory-list-item">
@@ -139,12 +147,7 @@ class DirectoryItem extends Component {
               <h4>Description (theirs)</h4>
               <div>{proj.descriptionTheirs}</div>
             </div>
-            <div className="directory-description-snippet">
-              <h4>{notableText}</h4>
-              <ul>
-                {notableElements}
-              </ul>
-            </div>
+            {notableBlock}
           </div>
           <div className="directory-body-resources">
             <div className="directory-description-snippet">
