@@ -48,7 +48,7 @@ export const ProjectList = [{
   }, {
     type: "link",
     src: "https://urbit.org/posts/address-space/",
-    description: "Urbit's unique plan re: address space"
+    description: "Urbit's unique address space",
   }, {
     type: "link",
     src: "https://medium.com/@urbit/design-of-a-digital-republic-f2b6b3109902",
@@ -167,6 +167,36 @@ export const ProjectList = [{
     src: "https://matrix.org",
     description: "Matrix homepage itself documents a wealth of great resources",
   }],
+}, {
+  name: "Upspin",
+  homepage: "https://upspin.io/",
+  type: "Protocol",
+  lastUpdated: "April 2017",
+  manifestoLink: "https://upspin.io/doc/overview.md",
+  descriptionTheirs: "Upspin is an experimental project to build a framework for naming and sharing files and other data securely, uniformly, and globally: a global name system of sorts. It is not a file system, but a set of protocols and reference implementations that can be used to join things like file systems and other storage services to the name space.",
+  updates: [{
+    date: "Apr 4, 2017",
+    linkSrc: "https://groups.google.com/forum/#!topic/upspin/BW02F5Rlc4A",
+    description: "Project meeting between Upspin core team",
+  }, {
+    date: "Mar 8, 2017",
+    linkSrc: "https://lwn.net/Articles/716409/",
+    description: "LWN gives an overview of "
+  }],
+  resources: [{
+    type: "link",
+    src: "https://groups.google.com/forum/#!forum/upspin",
+    description: "Mailing list for Upspin updates",
+  }],
+  notablePeople: [{
+    name: "Andrew Gerrand",
+    homepage: "http://nf.wh3rd.net/",
+    description: "Lead developer evangelist for Golang",
+  }, {
+    name: "Rob Pike",
+    homepage: "https://research.google.com/pubs/r.html",
+    description: "Co-creator of Golang, Plan 9 OS, and prolific software engineer"
+  }]
 }, {
   name: "Sandstorm",
   homepage: "https://sandstorm.io/",
