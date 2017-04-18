@@ -221,6 +221,9 @@ export const ProjectList = [{
     type: "link",
     src: "https://github.com/sandstorm-io/sandstorm/wiki/Sandstorm-Talks",
     description: "List of talks given at places around the world",
+  }, {
+    type: "video-youtube",
+    src: "https://www.youtube.com/embed/P060SFEDnj4"
   }],
   notablePeople: [{
     name: "Kenton Varda",
