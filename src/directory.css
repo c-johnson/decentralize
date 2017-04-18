@@ -1,7 +1,24 @@
-.directory-list {
-  margin-left: -150px;
-  margin-right: -120px;
+.which-projects-header {
+  margin: 15px 0 15px 27px;
+  cursor: pointer;
+}
 
+.which-projects-header h4 {
+  font-weight: normal;
+  display: inline;
+  margin-left: 10px;
+}
+
+.which-projects-body {
+  margin-left: 27px;
+  display: none;
+}
+
+.which-projects-body.active {
+  display: block;
+}
+
+.directory-list {
   font-size: 14px;
 }
 
