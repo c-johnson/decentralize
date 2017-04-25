@@ -1,3 +1,7 @@
+.hidden {
+  visibility: hidden;
+}
+
 .which-projects-header {
   margin: 15px 0 15px 27px;
   cursor: pointer;
@@ -78,7 +82,11 @@
 }
 
 .directory-list-body {
-  display: none;
+  /*display: none;*/
+  display: flex;
+  transition: max-height .4s ease-in-out;
+  overflow: hidden;
+  /*max-height: 0;*/
 }
 
 .directory-list-body.active {

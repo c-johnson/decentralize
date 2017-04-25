@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './directory.css';
 import { ProjectList } from './project-list';
+import { ListResources } from './components/list-resources';
+import { ListUpdates } from './components/list-updates';
+import { ListNotable } from './components/list-notable';
 
 export class Directory extends Component {
   constructor(args) {
@@ -73,89 +76,40 @@ class DirectoryItem extends Component {
   handleHeaderClick(e) {
     this.setState({
       active: !this.state.active,
+      // clientHeight: null,
     });
+  }
+
+  componentDidMount(e) {
+    const clientHeight = this._reactInternalInstance._renderedComponent._hostNode.children[1].clientHeight;
+    this.setState({
+      clientHeight: clientHeight,
+    });
+    // debugger
   }
 
   render() {
     const triangle = this.state.active ? "▾" : "▸";
-    const hideClass = this.state.active ? " active" : "";
+    // const hideClass = "";
     const proj = this.props.proj;
+    const visibleClass = this.state.clientHeight ? "" : " hidden";
+    // const bodyHideClass = this.state.active ? " active" : "";
 
-    let resourceElements;
-    let updateElements;
-    let notableElements;
+    let bodyStyle;
 
-    if (proj.resources) {
-      resourceElements = proj.resources.map((resource, index) => {
-        if (resource.type === "video-youtube") {
-          return (
-            <li key={index}>
-              <iframe width="230" height="128" src={`${resource.src}?rel=0`} frameBorder="0" allowFullScreen></iframe>
-            </li>
-          );
-        } else if (resource.type === "video-embed") {
-          return (
-            <li key={index}>
-              <video src={resource.src} width="230" controls/>
-            </li>
-          );
-        } else if (resource.type === "link") {
-          return (
-            <li key={index}>
-              <a href={resource.src} target="_blank">link</a>. <span>{resource.description}</span>
-            </li>
-          )
-        }
-      });
+    if (this.state.clientHeight) {
+      bodyStyle = {maxHeight: 0};
     } else {
-      resourceElements = null;
+      bodyStyle = {};
     }
 
-    if (proj.updates) {
-      updateElements = proj.updates.map((update, index) => {
-        let dateElem;
-        if (update.linkSrc) {
-          dateElem = (<a href={update.linkSrc} target="_blank" className="unstyled-link"><b>{update.date}</b></a>);
-        } else {
-          dateElem = (<b>{update.date}</b>);
-        }
-
-        return (
-          <li key={index}>
-            {dateElem}: <span>{update.description}</span>
-          </li>
-        );
-      });
-    } else {
-      updateElements = null;
+    if (this.state.active && this.state.clientHeight) {
+      // debugger
+      bodyStyle = {maxHeight: this.state.clientHeight};
     }
-
-    if (proj.notablePeople) {
-      notableElements = proj.notablePeople.map((person, index) => {
-        return (
-          <li key={index}>
-            <a href={person.homepage} target="_blank"><b>{person.name}</b></a>
-            <span>: </span>
-            <span>{person.description}</span>
-          </li>
-        )
-      });
-    } else {
-      notableElements = null;
-    }
-
-    const notableText = (proj.name === 'Urbit') ? "Infamous people" : "Notable people";
-    const notableBlock = (proj.notablePeople) ? (
-      <div className="directory-description-snippet">
-        <h4>{notableText}</h4>
-        <ul>
-          {notableElements}
-        </ul>
-      </div>
-    ) : null;
 
     return (
-      <div className="directory-list-item">
+      <div className={`directory-list-item${visibleClass}`}>
         <div className="directory-list-item-header" onClick={this.handleHeaderClick}>
           <div className="directory-list-dropdown-arrow">
             <span>{triangle}</span>
@@ -173,7 +127,7 @@ class DirectoryItem extends Component {
             <div>{proj.lastUpdated}</div>
           </div>
         </div>
-        <div className={`directory-list-body${hideClass}`}>
+        <div className={`directory-list-body`} style={bodyStyle}>
           <div className="directory-spacer"></div>
           <div className="directory-body-descriptions">
             <div className="directory-description-snippet">
@@ -184,26 +138,10 @@ class DirectoryItem extends Component {
               <h4>Description (theirs)</h4>
               <div>{proj.descriptionTheirs}</div>
             </div>
-            {notableBlock}
+            <ListNotable notablePeople={proj.notablePeople} name={proj.name} />
           </div>
-          <div className="directory-body-resources">
-            <div className="directory-description-snippet">
-              <h4>Resources</h4>
-              <ul>
-                {resourceElements}
-              </ul>
-              <div><a href="#">See more...</a></div>
-            </div>
-          </div>
-          <div className="directory-body-updates">
-            <div className="directory-description-snippet">
-              <h4>Updates</h4>
-              <ul>
-                {updateElements}
-              </ul>
-              <div><a href="#">See more...</a></div>
-            </div>
-          </div>
+          <ListResources resources={proj.resources} />
+          <ListUpdates updates={proj.updates} />
         </div>
       </div>
     );
