@@ -9,7 +9,9 @@ export class ListResources extends Component {
     }
 
     const resourceElements = props.resources.map((resource, index) => {
-      if (resource.type === "video-youtube") {
+      if (props.deferLoading) {
+        return null;        
+      } else if (resource.type === "video-youtube") {
         return (
           <li key={index}>
             <iframe width="230" height="128" src={`${resource.src}?rel=0`} frameBorder="0" allowFullScreen></iframe>

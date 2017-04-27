@@ -56,6 +56,9 @@ export class Directory extends Component {
         <div className="directory-list">
           {childrenItems}
         </div>
+        <div>
+          <iframe width="230" height="128" src="https://www.youtube.com/embed/8Dk2iVlc67M" frameBorder="0" allowFullScreen></iframe>
+        </div>
       </div>
     );
   }
@@ -67,6 +70,7 @@ class DirectoryItem extends Component {
 
     this.state = {
       active: false,
+      deferLoading: true,
     };
 
     // This binding is necessary to make `this` work in the callback
@@ -76,7 +80,6 @@ class DirectoryItem extends Component {
   handleHeaderClick(e) {
     this.setState({
       active: !this.state.active,
-      // clientHeight: null,
     });
   }
 
@@ -85,15 +88,12 @@ class DirectoryItem extends Component {
     this.setState({
       clientHeight: clientHeight,
     });
-    // debugger
   }
 
   render() {
     const triangle = this.state.active ? "▾" : "▸";
-    // const hideClass = "";
     const proj = this.props.proj;
     const visibleClass = this.state.clientHeight ? "" : " hidden";
-    // const bodyHideClass = this.state.active ? " active" : "";
 
     let bodyStyle;
 
@@ -104,8 +104,14 @@ class DirectoryItem extends Component {
     }
 
     if (this.state.active && this.state.clientHeight) {
-      // debugger
       bodyStyle = {maxHeight: this.state.clientHeight};
+      if (this.state.deferLoading) {
+        setTimeout(() => {
+          this.setState({
+            deferLoading: false
+          });
+        }, 450);
+      }
     }
 
     return (
@@ -140,7 +146,7 @@ class DirectoryItem extends Component {
             </div>
             <ListNotable notablePeople={proj.notablePeople} name={proj.name} />
           </div>
-          <ListResources resources={proj.resources} />
+          <ListResources resources={proj.resources} deferLoading={this.state.deferLoading} />
           <ListUpdates updates={proj.updates} />
         </div>
       </div>
