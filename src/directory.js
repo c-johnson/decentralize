@@ -56,9 +56,6 @@ export class Directory extends Component {
         <div className="directory-list">
           {childrenItems}
         </div>
-        <div>
-          <iframe width="230" height="128" src="https://www.youtube.com/embed/8Dk2iVlc67M" frameBorder="0" allowFullScreen></iframe>
-        </div>
       </div>
     );
   }
