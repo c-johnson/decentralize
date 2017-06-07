@@ -5,7 +5,7 @@ import { ListResources } from './components/list-resources';
 import { ListUpdates } from './components/list-updates';
 import { ListNotable } from './components/list-notable';
 
-export class Directory extends Component {
+export class DirectoryPage extends Component {
   constructor(args) {
     super(...args);
 
