@@ -10,16 +10,24 @@ export class DirectoryPage extends Component {
     super(...args);
 
     this.state = {
-      active: false,
+      whichActive: false,
+      whatActive: false,
     };
 
     // This binding is necessary to make `this` work in the callback
     this.handleWhichClick = this.handleWhichClick.bind(this);
+    this.handleWhatClick = this.handleWhatClick.bind(this);
   }
 
   handleWhichClick(e) {
     this.setState({
-      active: !this.state.active,
+      whichActive: !this.state.whichActive,
+    });
+  }
+
+  handleWhatClick(e) {
+    this.setState({
+      whatActive: !this.state.whatActive,
     });
   }
 
@@ -32,16 +40,38 @@ export class DirectoryPage extends Component {
       );
     });
 
-    const triangle = this.state.active ? "▾" : "▸";
-    const hideClass = this.state.active ? " active" : "";
+    const whatTriangle = this.state.whatActive ? "▾" : "▸";
+    const whichTriangle = this.state.whichActive ? "▾" : "▸";
+
+    const whatHideClass = this.state.whatActive ? " active" : "";
+    const whichHideClass = this.state.whichActive ? " active" : "";
 
     return (
       <div className="medium-container">
-        <div className="which-projects-header" onClick={this.handleWhichClick}>
-          <span>{triangle}</span><h4>Which projects are included?</h4>
+        <div className="which-projects-header" onClick={this.handleWhatClick}>
+          <span>{whatTriangle}</span><h4>What is a "decentralized web initiative?"</h4>
         </div>
 
-        <div className={`which-projects-body${hideClass}`}>
+        <div className={`which-projects-body${whatHideClass}`}>
+          <p className="intro-initial">
+            A "decentralized web initiative" is a specific kind of software project, usually a protocol or suite of software tools, that greatly increase the ability of application developers to control users' computing experience and personal data. These initiatives overcome limitations of the current software ecosystem that are unsolvable via traditional capitalist incentives.
+          </p>
+          <p>
+            When you use a website like facebook.com, all of your data is captured by their servers. This data is not portable between different applications or user interfaces, which stifles software innovation. We're currently unable to coordinate development power through either traditional VC-backed startups, benevolent enterprise monoliths, or international standards bodies. (While they do incredible work, standards bodies are unable to iterate rapidly enough for the demands of modern social-hungry users).
+          </p>
+          <p>
+            The current internet runs via an ad monetization model, where attention generated from new websites is converted into advertising dollars and sold on an open market. This means that the <b>priorities of social software companies will never be aligned with the values of users, society, or our political system</b>. Facebook itself doesnt have to be malicious if it incentivized to maximize user attention, which in turn shifts the entire information space in the direction of clickbait, fake news, incendiary analysis, shallow opinions, and an otherwise unstoppable garbage fire tornado of inane nonsense that dominates a growing amount of our attention and governs large swaths of our social and economic world.
+          </p>
+          <p>
+            The following initiatives are trying in part to democratize some aspect of the development of our digital life through technological standardization.
+          </p>
+        </div>
+
+        <div className="which-projects-header" onClick={this.handleWhichClick}>
+          <span>{whichTriangle}</span><h4>Which projects are included?</h4>
+        </div>
+
+        <div className={`which-projects-body${whichHideClass}`}>
           <p>This list is intended to be exhaustive, but this is only an early version. There are hundreds of initiatives to categorize, so for the initial period, I'm focusing on projects with <b>significant traction</b>, a <b>large userbase</b>, or a <b>clear vision</b> of the problem with centralized silos.</p>
 
           <p>For the most part, these are not <b>companies</b>. Companies will play a crucial role in the future of the decentralized software, but in our current funding ecosystem, the temptation for any individual company to abandon its principles and monitize its users' attention is too great for us to trust. Likely the biggest roadblock to widespread adoption of decentralized services is fostering a sustainable ecosystem of businesses that want to make <i>reasonable, medium-sized</i> profits, as opposed to trying to dominate the whole system, but this is an open problem.</p>
